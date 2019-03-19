@@ -9,20 +9,20 @@ int main(){
     int day , month , year , y , c , D , m ,  n;
     cout << " Write the date in DD MM GG format : "<< endl;;
     cout << "Type day : ";
-    cin >> day ;
+    cin >> day ;                        // in  numeric form eg. 19
     cout << "Type  month: ";
-    cin >> month ;
+    cin >> month ;                      //--------II-------- eg. 3
     cout << "Type year: ";
-    cin >> year ;
+    cin >> year ;                       //--------II-------- eg. 2019
 
     c = year / 100;                      // first 2 digits of year
     y = year % 100;                      // last 2 digits of year
     n = (2.6 * month - 0.2);            
-    m = n % 7 ;                         // code number for months
-    cout << " M = " << n << endl;
-    month >=3 ? year : year - 1;
-    D = day + m + y + c ;
-    cout << "D = "  << D << endl;
+    m = n % 7 ;                         // code number for month nad also to avoid error 
+    cout << " M = " << n << endl;       // just checking the value
+    month >=3 ? year : year - 1;        
+    D = day + m + y + c ;               //actual formula
+    cout << "D = "  << D << endl;       //checking the value
 
 
 
