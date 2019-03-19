@@ -1,4 +1,4 @@
-//its inaccurate...just realised
+
 
 #include <iostream>
 #include <cmath>
@@ -6,8 +6,7 @@ using namespace std;
 
 int main(){
 
-    int day , month , year ;
-    int D;
+    int day , month , year , y , c , D , m ,  n;
     cout << " Write the date in DD MM GG format : "<< endl;;
     cout << "Type day : ";
     cin >> day ;
@@ -16,37 +15,43 @@ int main(){
     cout << "Type year: ";
     cin >> year ;
 
-
+    c = year / 100;                      // first 2 digits of year
+    y = year % 100;                      // last 2 digits of year
+    n = (2.6 * month - 0.2);            
+    m = n % 7 ;                         // code number for months
+    cout << " M = " << n << endl;
     month >=3 ? year : year - 1;
-    int m =(((31 * month)% 12) - 2) ;
-    D = day + year + (year % 4) - (year % 100) + (year % 400) + (m - 2);
+    D = day + m + y + c ;
+    cout << "D = "  << D << endl;
+
+
 
     cout << day << "." << month << "." << year << " falls on ";
 
-    switch (  D  % 7)
+    switch (D  % 7)
     {
         case 0:
     cout << " sunday " ;
     break ;
-case 1 :
+        case 1 :
     cout << " monday";
     break;
-case 2 :
+        case 2 :
     cout <<" tuesday";
     break;
-case 3 :
+        case 3 :
     cout << " wednesday";
     break;
-case 4:
+        case 4:
     cout << " thursday";
     break;
-case 5 :
+            case 5 :
     cout << " friday";
     break;
-case 6 :
+        case 6 :
     cout << " saturday";
     break;
-default :
+        default :
     cout << " nowhere :/";
     break;
     }
