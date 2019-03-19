@@ -1,3 +1,5 @@
+//its inaccurate...just realised
+
 #include <iostream>
 #include <cmath>
 using namespace std;
